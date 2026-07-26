@@ -33,6 +33,24 @@
                 display: flex;
                 gap: 90px;
             }
+
+            .InterestsColumn {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #timeElement {
+                color: #e6e6e6;
+                font-weight: bold;
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            .Clock {
+                width: 350px; height: 50PX;
+                border: 1px solid #6C8480; padding: 20px; margin: 15px; 
+                background-color: #6C8480; border-radius: 8px;
+            }
         </style>
     </head>
     <body bgcolor="#404E3B">
@@ -78,7 +96,7 @@
                     <li> -  To soon be: <b> programming </b>  is a hobby  </li>
                 </ul>
                 </section>
-                <section>
+                <section class="InterestsColumn">
                 <h3> Interests: </h3>
                 <ul style='list-style: none; padding-left: 0;'>
                     <li> - <b> Coding </b>, since Grade 7 I was exposed to coding,
@@ -86,9 +104,23 @@
                         invest.  </li>
                     <li> - <b> Debates </b>, I always found it fascinating to watch. </li>
                     <li> - <b> Philosophy </b>, understanding the mind and beyond is beautiful </li>
+                    </ul>
+                    <div class="Clock">
+                    <h3 id="timeElement"> Time  </h3>
+                    </div>
+                </div>
                  </section>
-            </div>
-        </aside>
-        </div> </main>
+            </aside>
+        </div> 
+    </main>
+    <script>
+        function updateTime() {
+            var currentTime = new Date().toLocaleString();
+            var timeText = document.querySelector("#timeElement");
+            timeText.innerHTML = currentTime;
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
     </body>
 </html>
