@@ -52,6 +52,14 @@
                 background-color: #6C8480; border-radius: 8px;
             }
         </style>
+          <div id="contactWindow" style="display: none; position: fixed; top: 50%; left: 50%;
+          transform: translate(-50%, -50%); background-color: #7B9669; padding: 20px;
+          border-radius: 10px; color: white; z-index: 1000;"> 
+          <h3> Contact Me </h3>
+          <p><em>"Life is too short to not try." </em></p>
+          <p> Email: tabligathenamae@gmail.com </p>
+          <button id ="closeContact" style="cursor: pointer;"> Close</button>
+          </div>"
     </head>
     <body bgcolor="#404E3B">
         <header> <h1 style="text-align: center;color: #e6e6e6;"> 
@@ -62,7 +70,8 @@
                 <h2 style="color: #252525;"> 
                     Profile: </h2>
                     <div class="Profile">
-                    <img style = "width: 100px; height: 100px; border-radius: 50%;" 
+                    <img id="interactivepfp" 
+                    style = "width: 100px; height: 100px; border-radius: 50%; cursor: pointer" 
                     src="Athena.jpg"/>
 
                     <div class="Info">
@@ -105,7 +114,7 @@
                     <li> - <b> Debates </b>, I always found it fascinating to watch. </li>
                     <li> - <b> Philosophy </b>, understanding the mind and beyond is beautiful </li>
                     </ul>
-                    <div class="Clock">
+                    <div class="Clock" id="draggableClock">
                     <h3 id="timeElement"> Time  </h3>
                     </div>
                 </div>
@@ -113,14 +122,6 @@
             </aside>
         </div> 
     </main>
-    <script>
-        function updateTime() {
-            var currentTime = new Date().toLocaleString();
-            var timeText = document.querySelector("#timeElement");
-            timeText.innerHTML = currentTime;
-        }
-        updateTime();
-        setInterval(updateTime, 1000);
-    </script>
+    <script src="First WebOs.js"></script>
     </body>
 </html>
